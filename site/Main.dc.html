@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Eunice Ubba — Portfolio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1030}a:hover{opacity:0.7}
+.lid{transform-box: fill-box; transform-origin: 50% 0%; transform: scaleY(0); animation: blink 5.4s infinite}
+@keyframes blink{0%,90%,100%{transform: scaleY(0)}93%{transform: scaleY(1)}96.5%{transform: scaleY(0)}}
+@media (prefers-reduced-motion: reduce){.lid{animation: none}}
+.workrow{transition: padding-left 0.25s ease}.workrow:hover{padding-left: 16px}
+.worktitle{transition: color 0.2s ease}.workrow:hover .worktitle{color:#6F2451}
+.grain{background-image:url(/_blob/c6444bc7b48429cd1b90963b4c2d62ca);background-size:256px 256px}
+</style>
+</helmet>
+<div style="width: 100%; box-sizing: border-box; background: #F8EDE4; color: #1A1030; font-family: 'DM Sans', system-ui, sans-serif; min-height: 100%">
+
+  <!-- HERO: portrait turns toward the cursor -->
+  <section id="top" onMouseMove="{{onMove}}" onMouseLeave="{{onLeave}}" style="position: relative; overflow: hidden; min-height: 820px; background: radial-gradient(80% 50% at 100% 0%, rgba(45,21,42,0.95) 0%, rgba(45,21,42,0) 70%), radial-gradient(55% 55% at 100% 52%, rgba(95,48,78,0.85) 0%, rgba(95,48,78,0) 70%), radial-gradient(90% 45% at 0% 100%, #F7E4D4 0%, rgba(247,228,212,0) 70%), linear-gradient(180deg, #6A3555 0%, #8E5367 12%, #B77A77 32%, #CF9588 58%, #E2B8A6 80%, #F1D6C4 100%); box-sizing: border-box; padding: 28px 56px 64px; display: flex; flex-direction: column; align-items: center; gap: 40px">
+
+    <div class="grain" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; opacity: 0.55; mix-blend-mode: overlay"></div>
+
+    <!-- soft glow behind portrait -->
+    <div aria-hidden="true" style="position: absolute; left: 50%; top: 58%; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(252,226,206,0.6) 0%, rgba(252,226,206,0) 68%); transform: translate(-50%, -50%); pointer-events: none"></div>
+
+    <!-- viewer's local time + temperature -->
+    <div style="position: absolute; top: 28px; right: 56px; z-index: 4; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; color: #FFE9DC; text-shadow: 0 1px 8px rgba(45,21,42,0.35)">
+      <span style="display: flex; align-items: baseline; gap: 8px; line-height: 1"><span style="font-family: 'DM Sans', system-ui, sans-serif; font-weight: 600; font-size: 34px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums">{{timeText}}</span><span style="font-size: 14px; font-weight: 600; letter-spacing: 0.1em">{{tzText}}</span></span>
+      <span style="font-size: 16px; font-weight: 500">{{tempText}}</span>
+    </div>
+
+    <!-- nav pill -->
+    <nav style="position: relative; z-index: 4; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 28px; background: rgba(255,255,255,0.62); border: 1px solid #E6D0DD; backdrop-filter: blur(10px); border-radius: 999px; padding: 6px 28px; font-size: 14px; font-weight: 500; box-shadow: 0 8px 24px rgba(0,16,91,0.10)">
+      <a href="#work" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Work</a>
+      <a href="#resume" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Resume</a>
+      <a href="#about" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">About</a>
+      <a href="#contact" style="text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">Contact</a>
+    </nav>
+
+    <!-- three columns: greeting · portrait · links -->
+    <div style="position: relative; z-index: 3; width: 100%; max-width: 1280px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px">
+
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2A1230">Computer engineering · Class of 2026</p>
+        <h1 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(56px, 7vw, 96px); line-height: 0.98; letter-spacing: -0.02em">Hi, I'm <span style="font-style: italic; color: #3D1034">Eunice.</span></h1>
+        <p style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1.2"><em>I build interfaces,</em><br>write firmware, and tinker with AI agents.</p>
+        <a href="#work" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 28px; border-radius: 999px; background: rgba(255,255,255,0.62); border: 1px solid #E6D0DD; backdrop-filter: blur(10px); box-shadow: 0 8px 24px rgba(0,16,91,0.10); color: #1A1030; text-decoration: none; font-size: 15px; font-weight: 600">
+          See my work
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+
+      <!-- the portrait: cut out of its backdrop, only the eyes move -->
+      <div style="flex: 0 0 auto; width: 600px; max-width: 100%; aspect-ratio: 1750 / 1647; position: relative; pointer-events: none; filter: drop-shadow(0 26px 30px rgba(0,16,91,0.28))" role="img" aria-label="3D animated-style portrait of Eunice with long dark curly hair, smiling and holding a laptop. Her eyes follow your cursor and she blinks.">
+          <sc-for list="{{frames}}" as="f" hint-placeholder-count="1">
+            <img src="{{f.src}}" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; opacity: {{f.op}}; z-index: {{f.z}}">
+          </sc-for>
+          <!-- eyes: re-drawn on top of the image so only the eyes move -->
+          <svg viewBox="103 33 1750 1647" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 5">
+            <defs>
+              <clipPath id="clipEyeL"><polygon points="760,686 762,664 772,648 788,632 806,624 826,619 846,617 866,620 884,632 898,656 904,680 902,690 884,700 860,707 826,716 794,714 770,702"></polygon></clipPath>
+              <clipPath id="clipEyeR"><polygon points="1048,594 1052,570 1060,552 1074,536 1094,524 1114,518 1130,514 1154,513 1180,518 1196,530 1202,548 1198,564 1186,576 1170,588 1150,598 1130,608 1110,616 1090,623 1070,627 1056,622 1050,610"></polygon></clipPath>
+              <linearGradient id="gSclera" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8BFBC"></stop><stop offset="0.3" stop-color="#F7F0ED"></stop><stop offset="0.75" stop-color="#FBF6F3"></stop><stop offset="1" stop-color="#E8D8D3"></stop></linearGradient>
+              <radialGradient id="gIris" cx="50%" cy="42%" r="60%"><stop offset="0" stop-color="#2E2826"></stop><stop offset="0.5" stop-color="#1C1716"></stop><stop offset="0.82" stop-color="#0E0A09"></stop><stop offset="1" stop-color="#030202"></stop></radialGradient>
+              <linearGradient id="gSkinLid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9573A"></stop><stop offset="1" stop-color="#CC6B49"></stop></linearGradient>
+              <linearGradient id="gLid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A0A05" stop-opacity="0.6"></stop><stop offset="0.45" stop-color="#1A0A05" stop-opacity="0"></stop></linearGradient>
+            </defs>
+
+            <g style="transform: translate({{lx}}px, {{ly}}px)">
+            <g clip-path="url(#clipEyeL)">
+              <rect x="750" y="610" width="165" height="115" fill="url(#gSclera)"></rect>
+              <g style="transform: translate({{ex}}px, {{ey}}px)">
+                <ellipse cx="857" cy="662" rx="43" ry="46" fill="url(#gIris)"></ellipse>
+                <ellipse cx="857" cy="662" rx="41" ry="44" fill="none" stroke="#000000" stroke-width="5"></ellipse>
+                <circle cx="854" cy="661" r="23" fill="#000000"></circle>
+              </g>
+              <g style="transform: translate({{hlx}}px, {{hly}}px)">
+                <ellipse cx="874" cy="642" rx="8.5" ry="6.5" fill="#A9CDEE"></ellipse>
+              </g>
+              <rect x="750" y="610" width="165" height="115" fill="url(#gLid)"></rect>
+              <g class="lid"><rect x="750" y="610" width="165" height="115" fill="url(#gSkinLid)"></rect><path d="M760 688 L770 702 L794 714 L826 716 L860 707 L884 700 L904 688" fill="none" stroke="#120905" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></g>
+            </g>
+
+            </g>
+            <g style="transform: translate({{rx}}px, {{ry}}px)">
+            <g clip-path="url(#clipEyeR)">
+              <rect x="1040" y="505" width="170" height="130" fill="url(#gSclera)"></rect>
+              <g style="transform: translate({{ex}}px, {{ey}}px)">
+                <ellipse cx="1115" cy="567" rx="45" ry="45" fill="url(#gIris)"></ellipse>
+                <ellipse cx="1115" cy="567" rx="43" ry="43" fill="none" stroke="#000000" stroke-width="5"></ellipse>
+                <circle cx="1115" cy="567" r="25" fill="#000000"></circle>
+              </g>
+              <g style="transform: translate({{hlx}}px, {{hly}}px)">
+                <ellipse cx="1132" cy="545" rx="8.5" ry="6.5" fill="#A9CDEE"></ellipse>
+              </g>
+              <rect x="1040" y="505" width="170" height="130" fill="url(#gLid)"></rect>
+              <g class="lid"><rect x="1040" y="505" width="170" height="130" fill="url(#gSkinLid)"></rect><path d="M1048 604 L1056 622 L1070 627 L1090 623 L1110 616 L1130 608 L1150 598 L1170 588 L1186 576 L1200 560" fill="none" stroke="#120905" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></g>
+            </g>
+          </g>
+          </svg>
+        </div>
+
+      <div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 6px">
+        <p style="margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FFE9DC">Find me</p>
+        <a href="#work" style="text-decoration: none; font-size: 18px; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; color: #FFFFFF; text-shadow: 0 1px 8px rgba(45,21,42,0.35)">Selected work</a>
+        <a href="#resume" style="text-decoration: none; font-size: 18px; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; color: #FFFFFF; text-shadow: 0 1px 8px rgba(45,21,42,0.35)">Resume</a>
+        <a href="#about" style="text-decoration: none; font-size: 18px; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; color: #FFFFFF; text-shadow: 0 1px 8px rgba(45,21,42,0.35)">About me</a>
+        <a href="#contact" style="text-decoration: none; font-size: 18px; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; color: #FFFFFF; text-shadow: 0 1px 8px rgba(45,21,42,0.35)">Say hello</a>
+        <p style="margin: 20px 0 0; font-size: 14px; color: #FFE9DC">Move your cursor — I'll look.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" style="box-sizing: border-box; padding: 96px 56px; position: relative; overflow: hidden; background: radial-gradient(60% 70% at 100% 0%, rgba(183,122,119,0.50) 0%, rgba(183,122,119,0) 70%), radial-gradient(55% 60% at 0% 100%, rgba(111,58,86,0.22) 0%, rgba(111,58,86,0) 70%), linear-gradient(180deg, #F1D6C4 0%, #EDC9B9 100%)">
+    <div class="grain" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; opacity: 0.55; mix-blend-mode: overlay"></div>
+    <div style="position: relative; display: flex; flex-wrap: wrap; gap: 16px 48px; align-items: baseline; justify-content: space-between; margin-bottom: 48px">
+      <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: -0.02em">Selected work</h2>
+      <p style="margin: 0; font-size: 15px; color: #3F2C3E">Projects and coursework, 2025–26</p>
+    </div>
+    <div style="position: relative; display: flex; flex-direction: column; border-bottom: 1px solid rgba(63,44,62,0.22)">
+      <sc-for list="{{projects}}" as="p" hint-placeholder-count="3">
+        <div class="workrow" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 16px 40px; padding: 44px 0; border-top: 1px solid rgba(63,44,62,0.22)">
+          <span style="flex: 0 0 56px; font-family: 'Instrument Serif', Georgia, serif; font-size: 24px; color: {{accent}}">{{p.num}}</span>
+          <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+            <h3 class="worktitle" style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.02; letter-spacing: -0.02em">{{p.title}}</h3>
+            <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #3F2C3E">{{p.tags}}</p>
+          </div>
+          <p style="margin: 0; flex: 1 1 320px; max-width: 440px; font-size: 18px; line-height: 1.55; color: #3B2A3A">{{p.body}}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" style="box-sizing: border-box; padding: 96px 56px; position: relative; overflow: hidden; background: radial-gradient(60% 70% at 0% 0%, rgba(183,122,119,0.45) 0%, rgba(183,122,119,0) 70%), radial-gradient(55% 60% at 100% 100%, rgba(111,58,86,0.22) 0%, rgba(111,58,86,0) 70%), linear-gradient(180deg, #EDC9B9 0%, #F1D6C4 100%)">
+    <div class="grain" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; opacity: 0.55; mix-blend-mode: overlay"></div>
+    <div style="position: relative; display: flex; flex-wrap: wrap; gap: 40px 80px">
+      <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+        <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: -0.02em">Resume</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3B2A3A; max-width: 320px">The short version. Everything here is also in the PDF.</p>
+        <a href="#resume" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 28px; border-radius: 999px; background: #00105B; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">
+          Download PDF [RESUME LINK]
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"></path></svg>
+        </a>
+      </div>
+
+      <div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column">
+
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0; border-top: 1px solid rgba(63,44,62,0.22)">
+          <p style="margin: 0; flex: 0 0 190px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3F2C3E">Education</p>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+            <h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.1">B.S. Computer Engineering</h3>
+            <p style="margin: 0; font-size: 16px; color: #3F2C3E">[YOUR UNIVERSITY] · Graduating December 2026</p>
+            <p style="margin: 8px 0 0; font-size: 17px; line-height: 1.55; color: #3B2A3A">Digital Engineering Lab: embedded systems on the ATmega324PB, with a written lab report every week.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 28px 0; border-top: 1px solid rgba(63,44,62,0.22); border-bottom: 1px solid rgba(63,44,62,0.22)">
+          <p style="margin: 0; flex: 0 0 190px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3F2C3E">Skills</p>
+          <p style="margin: 0; flex: 1 1 320px; min-width: 0; font-size: 17px; line-height: 1.7; color: #3B2A3A">Frontend · Figma · Embedded systems (AVR) · OpenAI and Anthropic APIs · LangChain · Ollama</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="box-sizing: border-box; padding: 96px 56px; position: relative; overflow: hidden; background: radial-gradient(60% 60% at 100% 100%, rgba(201,138,126,0.40) 0%, rgba(201,138,126,0) 70%), linear-gradient(160deg, #2D152A 0%, #4F2840 48%, #7A445B 100%); color: #FBF1F7">
+    <div class="grain" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; opacity: 0.55; mix-blend-mode: overlay"></div>
+    <div style="position: relative; display: flex; flex-wrap: wrap; gap: 48px 80px">
+      <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 32px">
+        <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: -0.02em">About</h2>
+        <img src="/_blob/af5660ea664255176299e5096071da90" alt="Photo of Eunice smiling, with long dark curly hair" style="display: block; width: 100%; max-width: 300px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: 24px">
+      </div>
+      <div style="flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px; font-size: 21px; line-height: 1.55">
+        <p style="margin: 0">I'm a computer engineering student graduating in December 2026. I like working across the stack: C on an ATmega324PB in my digital engineering lab, LLM tooling with the OpenAI and Anthropic APIs, LangChain and Ollama, and the interfaces people actually touch.</p>
+        <p style="margin: 0">Through ACM-W and ACM Web I built most of the frontend on both projects, and I ran a Figma workshop for incoming freshmen.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+          <sc-for list="{{skills}}" as="s" hint-placeholder-count="6">
+            <span style="border: 1px solid rgba(255,255,255,0.4); border-radius: 999px; padding: 8px 18px; font-size: 15px; font-weight: 500">{{s.label}}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="box-sizing: border-box; padding: 112px 56px 48px; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 48px; background: radial-gradient(60% 80% at 100% 100%, rgba(111,58,86,0.38) 0%, rgba(111,58,86,0) 70%), radial-gradient(50% 70% at 0% 0%, rgba(255,235,220,0.7) 0%, rgba(255,235,220,0) 70%), linear-gradient(180deg, #F1D6C4 0%, #E3B3A3 55%, #D49A8E 100%)">
+    <div class="grain" aria-hidden="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; opacity: 0.55; mix-blend-mode: overlay"></div>
+    <h2 style="position: relative; margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(72px, 13vw, 200px); line-height: 0.9; letter-spacing: -0.03em">Let's <span style="font-style: italic; color: {{accent}}">talk.</span></h2>
+    <div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px 40px; font-size: 20px; font-weight: 500">
+      <a href="#contact" style="min-height: 44px; display: inline-flex; align-items: center">[YOUR EMAIL]</a>
+      <a href="#contact" style="min-height: 44px; display: inline-flex; align-items: center">[LINKEDIN URL]</a>
+      <a href="#contact" style="min-height: 44px; display: inline-flex; align-items: center">[GITHUB URL]</a>
+    </div>
+    <p style="position: relative; margin: 24px 0 0; padding-top: 24px; border-top: 1px solid rgba(63,44,62,0.22); font-size: 14px; color: #2A1230">© 2026 Eunice Ubba</p>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#6F2451","options":["#6F2451","#7D426B","#683759","#00105B"]},"$preview":{"width":1440,"height":2500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { cx: 0, cy: 0, gx: 0, now: Date.now(), temp: null };
+    this.tx = 0; this.ty = 0; this.raf = 0;
+    this.step = () => {
+      const { cx, cy, gx } = this.state;
+      const ncx = cx + (this.tx - cx) * 0.085;
+      const ncy = cy + (this.ty - cy) * 0.12;
+      const ngx = gx + (this.tx - gx) * 0.2;
+      const done = Math.abs(this.tx - ncx) < 0.0005 && Math.abs(this.ty - ncy) < 0.0005 && Math.abs(this.tx - ngx) < 0.0005;
+      this.setState(done ? { cx: this.tx, cy: this.ty, gx: this.tx } : { cx: ncx, cy: ncy, gx: ngx });
+      this.raf = done ? 0 : requestAnimationFrame(this.step);
+    };
+    this.kick = () => { if (!this.raf) this.raf = requestAnimationFrame(this.step); };
+    this.onMove = (e) => {
+      const r = e.currentTarget.getBoundingClientRect();
+      this.tx = Math.max(-1, Math.min(1, (e.clientX - r.left - r.width / 2) / (r.width / 2)));
+      this.ty = Math.max(-1, Math.min(1, (e.clientY - r.top - r.height / 2) / (r.height / 2)));
+      this.kick();
+    };
+    this.onLeave = () => { this.tx = 0; this.ty = 0; this.kick(); };
+  }
+  componentDidMount() {
+    this.clock = setInterval(() => this.setState({ now: Date.now() }), 10000);
+    // approximate location from the viewer's network address, then current temperature
+    (async () => {
+      try {
+        const g = await (await fetch('https://get.geojs.io/v1/ip/geo.json')).json();
+        const w = await (await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + g.latitude + '&longitude=' + g.longitude + '&current=temperature_2m&temperature_unit=fahrenheit')).json();
+        const t = w && w.current && w.current.temperature_2m;
+        if (typeof t === 'number') this.setState({ temp: Math.round(t) });
+      } catch (err) { /* temperature stays hidden */ }
+    })();
+  }
+  componentWillUnmount() { if (this.raf) cancelAnimationFrame(this.raf); if (this.clock) clearInterval(this.clock); }
+  renderVals() {
+    const { cx, cy, gx, now, temp } = this.state;
+    return {
+      timeText: new Date(now).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }),
+      tempText: temp === null ? '' : temp + '°F',
+      tzText: (new Date(now).toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(' ').pop()),
+      accent: this.props.accent ?? '#6F2451',
+      onMove: this.onMove,
+      onLeave: this.onLeave,
+      frames: [{ src: '/_blob/2b72a6d137d22409da142050480bef79', op: 1, z: 1 }],
+      lx: 0, ly: 0, rx: 0, ry: 0,
+      ex: (gx * 22).toFixed(1),
+      ey: (cy * 12).toFixed(1),
+      hlx: (gx * 8).toFixed(1),
+      hly: (cy * 5).toFixed(1),
+      projects: [
+        { num: '01', title: 'Host vulnerability triage agent', body: 'A team project: an agentic assistant that triages vulnerabilities on Linux hosts, built with defenses against prompt injection.', tags: 'LLM agents · Security · Linux' },
+        { num: '02', title: 'AVR Simon Board', body: 'Weekly lab work for Digital Engineering Lab on the ATmega324PB, each experiment written up in a lab report.', tags: 'Embedded systems · AVR · ATmega324PB' },
+        { num: '03', title: 'ACM-W & ACM Web', body: 'Most of the frontend on both organizations’ projects, plus a Figma workshop for incoming freshmen.', tags: 'Frontend · Figma · Community' }
+      ],
+      skills: [
+        { label: 'Frontend' }, { label: 'Embedded systems (AVR)' }, { label: 'OpenAI API' },
+        { label: 'Anthropic API' }, { label: 'LangChain' }, { label: 'Ollama' }, { label: 'Figma' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
